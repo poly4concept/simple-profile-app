@@ -2,10 +2,14 @@ version: '3'
 services:
   my-app:
     image: poly4concept/simple-profile-app:1.1
+    restart: always
     ports:
-    - 3000:3000
+      - 3000:3000
+    volumes:
+      - ./app:/home/poly4-app
   mongodb:
     image: mongo
+    restart: always
     ports:
       - 27017:27017
     environment:

@@ -1,14 +1,14 @@
 FROM node:13-alpine
 
-ENV MONGO_DB_USERNAME=admin \
-    MONGO_DB_PWD=password
+# ENV MONGO_DB_USERNAME=admin \
+#     MONGO_DB_PWD=password
 
-RUN mkdir -p /home/poly4-app
+RUN mkdir -p /home/profile-app
 
-COPY ./app /home/poly4-app
+COPY ./app /home/profile-app
 
 # set default dir so that next commands executes in /home/app dir
-WORKDIR /home/poly4-app
+WORKDIR /home/profile-app
 
 # will execute npm install in /home/app because of WORKDIR
 RUN npm install
