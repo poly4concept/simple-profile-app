@@ -18,6 +18,6 @@ docker-compose up
 ```
 > make sure you are in the root directory containing the docker-compose file
 
-Step 2: Access teh  mongo-express UI on port `localhost:8081`, create a new database  `my-db` and create a new collection `users` in the database `my-db`
+Step 2: Access the  mongo-express UI on port `localhost:8081`, create a new database  `my-db` and create a new collection `users` in the database `my-db`
 
 Step 3: You can now access the app on `localhost:3000`
