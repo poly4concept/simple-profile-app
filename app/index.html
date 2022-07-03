@@ -45,12 +45,12 @@
     (async function init() {
         const response = await fetch('http://localhost:3000/get-profile');
         console.log("response", response);
-        const user = await response.json();
-        console.log(JSON.stringify(user));
+        const pet = await response.json();
+        console.log(JSON.stringify(pet));
 
-        document.getElementById('name').textContent = user.name ? user.name : 'Anna Smith';
-        document.getElementById('email').textContent = user.email ? user.email : 'anna.smith@example.com';
-        document.getElementById('interests').textContent = user.interests ? user.interests : 'coding';
+        document.getElementById('name').textContent = pet.name ? pet.name : 'Leo';
+        document.getElementById('age').textContent = pet.age ? pet.age : '4';
+        document.getElementById('feed').textContent = pet.feed ? pet.feed : 'canned food';
 
         const cont = document.getElementById('container');
         cont.style.display = 'block';
@@ -62,8 +62,8 @@
 
         const payload = {
             name: document.getElementById('input-name').value, 
-            email: document.getElementById('input-email').value, 
-            interests: document.getElementById('input-interests').value
+            age: document.getElementById('input-age').value, 
+            feed: document.getElementById('input-feed').value
         };
         
         const response = await fetch('http://localhost:3000/update-profile', {
@@ -77,8 +77,8 @@
         const jsonResponse = await response.json();
 
         document.getElementById('name').textContent = jsonResponse.name;
-        document.getElementById('email').textContent = jsonResponse.email;
-        document.getElementById('interests').textContent = jsonResponse.interests;
+        document.getElementById('age').textContent = jsonResponse.age;
+        document.getElementById('feed').textContent = jsonResponse.feed;
 
         cont.style.display = 'block';
         contEdit.style.display = 'none';
@@ -89,8 +89,8 @@
         const cont = document.getElementById('container');
 
         document.getElementById('input-name').value = document.getElementById('name').textContent;
-        document.getElementById('input-email').value = document.getElementById('email').textContent;
-        document.getElementById('input-interests').value = document.getElementById('interests').textContent;
+        document.getElementById('input-age').value = document.getElementById('age').textContent;
+        document.getElementById('input-feed').value = document.getElementById('feed').textContent;
 
         cont.style.display = 'none';
         contEdit.style.display = 'block';
@@ -98,24 +98,22 @@
 </script>
 <body>
     <div class='container' id='container'>
-        <h1>User profile Information</h1>
-        <img src='https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFsZSUyMGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60' alt="user-profile">
-        <span>Name: </span><h3 id='name'>Anna Smith</h3>
+        <h1>Your Pet Profile</h1>
+        <span>Name: </span><h3 id='name'>Leo</h3>
         <hr />
-        <span>Email: </span><h3 id='email'>anna.smith@example.com</h3>
+        <span>Age: </span><h3 id='age'>4</h3>
         <hr />
-        <span>Interests: </span><h3 id='interests'>coding</h3>
+        <span>Feed: </span><h3 id='feed'>canned food</h3>
         <hr />
         <button class='button' onclick="updateProfile()">Edit Profile</button>
     </div>
     <div class='container' id='container-edit'>
-        <h1>User profile</h1>
-        <img src='profile-picture' alt="user-profile">
-        <span>Name: </span><label for='input-name'></label><input type="text" id='input-name' value='Anna Smith' />
+        <h1>Pet Profile</h1>
+        <span>Name: </span><label for='input-name'></label><input type="text" id='input-name' value='Leo' />
         <hr />
-        <span>Email: </span><label for='input-email'></label><input type="email" id='input-email' value='anna.smith@example.com' />
+        <span>Age: </span><label for='input-age'></label><input type="number" id='input-age' value={4} />
         <hr />
-        <span>Interests: </span><label for='input-interests'></label><input type="text" id='input-interests' value='coding' />
+        <span>Interests: </span><label for='input-feed'></label><input type="text" id='input-feed' value='canned food' />
         <hr />
         <button class='button' onclick="handleUpdateProfileRequest()">Update Profile</button>
     </div>

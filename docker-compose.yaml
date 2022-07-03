@@ -6,7 +6,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./app:/home/poly4-app
+      - ./app:/home/profile-app
   mongodb:
     image: mongo
     restart: always
