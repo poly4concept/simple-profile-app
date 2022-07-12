@@ -1,18 +1,18 @@
 FROM node:13-alpine
-
-# ENV MONGO_DB_USERNAME=admin \
-#     MONGO_DB_PWD=password
+# Specify the version of node we are using for the application
 
 RUN mkdir -p /home/profile-app
+# use the RUN command to create a new directory in the application image where our application would reside
 
 COPY ./app /home/profile-app
+# copy our local application directory and files to the new directory we created in the image
 
-# set default dir so that next commands executes in /home/app dir
 WORKDIR /home/profile-app
+# set default dir so that next commands executes in /home/profile-app dir
 
-# will execute npm install in /home/app because of WORKDIR
 RUN npm install
+# will run npm install in /home/profile-app to install all the dependencies of the application
 
-# no need for /home/app/server.js because of WORKDIR
 CMD ["node", "server.js"]
-
+# start the application by runnning `node server.js` in the WORKDIR
+ 
