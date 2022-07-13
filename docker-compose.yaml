@@ -6,7 +6,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./app:/home/profile-app/app
+      - ./app:/home/simple-profile-app/app
     depends_on:
       - mongodb
   mongodb:
