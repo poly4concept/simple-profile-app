@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-app-deploy
+  labels:
+    name: simple-app-deploy
+    app: profile-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: simple-app-pod
+      app: profile-app
+  template:
+    metadata:
+      name: simple-app-pod
+      labels:
+        name: simple-app-pod
+        app: profile-app
+    spec:
+      containers:
+      - name: simple-app
+        image: poly4concept/simple-profile-app
+        ports:
+        - containerPort: 3000
