@@ -2,7 +2,7 @@ FROM node:16-bullseye-slim
 # Specify the version of node we are using for the application
 
 EXPOSE 3000
-#Expose application to port 3000
+# expose application to port 3000
 
 RUN mkdir -p /home/simple-profile-app
 # use the RUN command to create a new directory in the application image where our application would reside
