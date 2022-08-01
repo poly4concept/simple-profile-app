@@ -19,13 +19,13 @@ spec:
         name: mongoexpress-pod
         app: profile-app
     spec:
-      initContainers:
-          - name: wait-for-first
-            image: opsfleet/depends-on
-            imagePullPolicy: Always
-            args:
-            - -service=mongodb
-            - -check_interval=2
+      # initContainers:
+      #     - name: wait-for-first
+      #       image: opsfleet/depends-on
+      #       imagePullPolicy: Always
+      #       args:
+      #       - -service=mongodb
+      #       - -check_interval=2
       containers:
         - name: mongoexpress
           image: mongo-express:0.54

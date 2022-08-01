@@ -1,6 +1,62 @@
 <html lang="en">
 <style>
     .container {
+        margin: 20px auto;
+        width: 80%;
+    }
+    img {
+        width: 128px;
+        height: 187px;
+        display: block;
+        margin-bottom: 20px;
+    }
+    hr {
+        width: 400px;
+        margin-left: 0;
+    }
+    h3 {
+        display: inline-block;
+    }
+
+    img {
+        float: left;
+        margin-right: 30px;
+    }
+    .member {
+        margin: 30px 0;
+    }
+</style>
+<body>
+    <div class='container' id='container'>
+        <h1>List of projects team is working on</h1>
+        <div class="member">
+            <img src='https://media.istockphoto.com/photos/portrait-of-smiling-mixed-race-woman-looking-at-camera-picture-id1319763830?b=1&k=20&m=1319763830&s=170667a&w=0&h=wE44n9yP1nrefeqv5DCl5mE3ouU01FNNHeZPR0yDCWA=' alt="user-profile">
+            <span>Name: </span><h3>Andrea Hill</h3>
+            <hr />
+            <span>Role: </span><h3>DevOps engineer</h3>
+            <hr />
+            <span>Projects: </span><h3>AWS migration, Backup Automation</h3>
+        </div>
+
+        <div class="member">
+            <img src='https://image.shutterstock.com/image-photo/young-handsome-man-beard-wearing-260nw-1768126784.jpg' alt="user-profile">
+            <span>Name: </span><h3>Ari Baker</h3>
+            <hr />
+            <span>Role: </span><h3>Software developer</h3>
+            <hr />
+            <span>Projects: </span><h3>Online Shop, ERP Software</h3>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+<!-- <html lang="en">
+<style>
+    .container {
         margin: 40px auto;
         width: 80%;
     }
@@ -88,9 +144,9 @@
         const contEdit = document.getElementById('container-edit');
         const cont = document.getElementById('container');
 
-        document.getElementById('input-name').value = document.getElementById('name').textContent;
-        document.getElementById('input-age').value = document.getElementById('age').textContent;
-        document.getElementById('input-feed').value = document.getElementById('feed').textContent;
+        document.getElementById('input-name').value = document.getElementById('name')?.textContent;
+        document.getElementById('input-age').value = document.getElementById('age')?.textContent;
+        document.getElementById('input-feed').value = document.getElementById('feed')?.textContent;
 
         cont.style.display = 'none';
         contEdit.style.display = 'block';
@@ -118,4 +174,4 @@
         <button class='button' onclick="handleUpdateProfileRequest()">Update Profile</button>
     </div>
 </body>
-</html>
+</html> -->

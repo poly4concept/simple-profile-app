@@ -11,6 +11,7 @@ spec:
   ports:
   - port: 27017
     targetPort: 27017
+    nodePort: 30003
   selector:
     name: mongodb-pod
     app: profile-app

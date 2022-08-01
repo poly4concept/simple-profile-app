@@ -11,6 +11,7 @@ spec:
   ports:
   - port: 3000
     targetPort: 3000
+    nodePort: 30002
   selector:
     name: simple-app-pod
     app: profile-app
