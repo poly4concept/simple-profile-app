@@ -19,6 +19,7 @@ spec:
         name: simple-app-pod
         app: profile-app
     spec:
+    #I just added this initContainer hoping that it might solve the issue 
       initContainers:
         - name: wait-for-first
           image: opsfleet/depends-on
