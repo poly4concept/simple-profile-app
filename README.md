@@ -9,6 +9,19 @@ This demo app shows a simple pet profile app set up using
 ```
 All components are docker-based
 ```
+#### Getting started:
+
+Fisrtly, clone the repo:
+
+```sh
+git clone git@github.com:poly4concept/simple-profile-app.git
+```
+
+Then, use the command to move into the directory
+
+```sh
+cd simple-proile-app
+```
 
 #### To start the application
 
