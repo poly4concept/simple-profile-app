@@ -20,7 +20,7 @@ git clone git@github.com:poly4concept/simple-profile-app.git
 Then, use the command to move into the directory
 
 ```sh
-cd simple-proile-app
+cd simple-profile-app
 ```
 
 #### To start the application
